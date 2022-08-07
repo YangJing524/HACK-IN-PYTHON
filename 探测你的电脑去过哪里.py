@@ -9,7 +9,7 @@ def sniffProbe(p):
 		netName=p.getlayer(Dot11ProbeReq).info
 		if netName not in probeReqs:
 			probeReqs.append(netName)
-			print('[+] Detect New probeRequest:'+netName)
+			print '[+] Detect New probeRequest:'+netName
 
 sniff(iface=interfacs,prn=sniffProbe)
 
