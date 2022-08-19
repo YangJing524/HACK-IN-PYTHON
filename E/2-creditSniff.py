@@ -12,11 +12,11 @@ def findCreditCard(pkt):
     visaRE = re.findall('4[0-9]{12}(?:[0-9]{3})?', raw)
 
     if americaRE:
-        print '[+] Found American Express Card: ' + americaRE[0]
+        print('[+] Found American Express Card: ' + americaRE[0])
     if masterRE:
-        print '[+] Found MasterCard Card: ' + masterRE[0]
+        print('[+] Found MasterCard Card: ' + masterRE[0])
     if visaRE:
-        print '[+] Found Visa Card: ' + visaRE[0]
+        print('[+] Found Visa Card: ' + visaRE[0])
 
 
 def main():
@@ -26,13 +26,13 @@ def main():
     (options, args) = parser.parse_args()
 
     if options.interface == None:
-        print parser.usage
+        print(parser.usage)
         exit(0)
     else:
         conf.iface = options.interface
 
     try:
-        print '[*] Starting Credit Card Sniffer.'
+        print('[*] Starting Credit Card Sniffer.')
         sniff(filter='tcp', prn=findCreditCard, store=0)
     except KeyboardInterrupt:
         exit(0)
